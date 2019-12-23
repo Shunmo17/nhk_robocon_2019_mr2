@@ -1,0 +1,36 @@
+#include "Common.h"
+#include "SO1602A.h"
+
+void OLED_display()
+{
+    oled.clear();
+    if (oled_debug == 1)
+    {
+        oled.clear();
+        oled.printf("(%1.0lf,%1.0lf,%1.0lf)", roll, pitch, yaw);
+        oled.printf("\n(x,y)=(%1.1lf,%1.1lf)", x_now, y_now);
+    }
+    else if (oled_debug == 2)
+    {
+        oled.clear();
+        oled.printf("BNO=(%1.0lf,%1.0lf,%1.0lf)", roll, pitch, yaw);
+        oled.printf("\n(l,r)=(%1.1lf,%1.1lf)", ratio_left, ratio_right);
+    }
+    else if (oled_debug == 3)
+    {
+        oled.clear();
+        oled.printf("(%1.1lf,%1.1lf)", ratio_left, ratio_right);
+        oled.printf("\n(x,y)=(%1.1lf,%1.1lf)", x_now, y_now);
+    }
+    else if (oled_debug == 4)
+    {
+        oled.clear();
+        oled.printf("(%1.1lf,%1.1lf,%1.1lf)", roll, pitch, yaw);
+    }
+    else if (oled_debug == 5)
+    {
+        oled.clear();
+        oled.printf("(px,py)=(%d, %d)", px, py);
+        //oled.printf("\nleg=(%1.1lf,%1.1lf)", x_now, y_now);
+    }
+}
