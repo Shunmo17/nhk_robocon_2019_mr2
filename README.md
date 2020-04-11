@@ -32,5 +32,3 @@ main source code
 ## Maintainer
 
 Shunsuke Mochizuki (@Shunmo17)
-
-Undergraduated in 2020 
